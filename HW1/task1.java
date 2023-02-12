@@ -13,10 +13,10 @@ public class task1 {
         int num = sc.nextInt();
         sc.close();
 
-        System.out.print("sum of numbers from 1 to n is: ");
+        System.out.printf("sum of numbers from 1 to %d is: ", num);
         System.out.println(sum(num));  
 
-        System.out.print("product of numbers from 1 to n is: ");
+        System.out.printf("product of numbers from 1 to %d is: ", num);
         System.out.println(fact(num)); 
     }
 
