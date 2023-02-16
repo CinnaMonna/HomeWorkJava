@@ -5,6 +5,8 @@ package HW2;
 
 // import java.lang.System.Logger;
 import java.util.logging.*;
+import java.io.File;
+import java.io.FileWriter;
 import java.util.Arrays;
 
 public class task1 {
@@ -12,8 +14,10 @@ public class task1 {
         int[] arr = new int[] {13, 0, -10, 8, 62, -2};
         // int[] arr = new int[] {3, 0, 1};
 
-        logging("initial array:" + Arrays.toString(arr));
-        System.out.println("result: " + Arrays.toString(sortArray(arr)));      
+        logging("initial array: \n" + Arrays.toString(arr));
+        loggingToFile("initial array: \n" + Arrays.toString(arr)+ "\n");
+        System.out.println("result: \n" + Arrays.toString(sortArray(arr)));
+        loggingToFile("result: \n" + Arrays.toString(sortArray(arr)));      
         
     }
     static int[] sortArray(int[] array) {
@@ -26,6 +30,7 @@ public class task1 {
                     // System.out.println(Arrays.toString(array));
                     
                     logging(Arrays.toString(array));
+                    loggingToFile(Arrays.toString(array));
                 }
                 
             }
@@ -44,6 +49,20 @@ public class task1 {
                 "-----------------------------------------------");
 
            
-    }   
+    }  
+    static void loggingToFile(String message) {
+        String file_name = "logrecord.txt";
+        File file = new File(file_name);
+
+        try{
+            FileWriter w = new FileWriter(file, true);
+            w.write(message + "\n");
+            w.close();
+            System.out.println("OK");
+        }
+        catch (Exception e) {
+            System.out.println("something is wrong");
+        }
+    } 
 }
 
