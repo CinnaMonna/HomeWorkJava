@@ -3,7 +3,6 @@
 
 package HW2;
 
-// import java.lang.System.Logger;
 import java.util.logging.*;
 import java.io.File;
 import java.io.FileWriter;
@@ -27,7 +26,6 @@ public class task1 {
                     int temp = array[j];
                     array[j] = array[j+1];
                     array[j+1] = temp;
-                    // System.out.println(Arrays.toString(array));
                     
                     logging(Arrays.toString(array));
                     loggingToFile(Arrays.toString(array));
